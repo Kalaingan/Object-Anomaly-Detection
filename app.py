@@ -647,8 +647,8 @@ def streamlit_app():
                 plt.colorbar(im, label='Anomaly Score')
                 plt.title("Inspection Heatmap (No Significant Anomalies)")
                 plt.tight_layout()
-                plt.savefig("heatmap_good.png")
-                st.image("heatmap_good.png", caption="Inspection Heatmap", use_column_width=True)
+                plt.savefig("good_heatmap.png")
+                st.image("good_heatmap.png", caption="Inspection Heatmap", use_column_width=True)
                 st.write(f"Maximum anomaly score: {np.max(heatmap):.4f} (below threshold)")
         
         # Clean up
@@ -656,8 +656,8 @@ def streamlit_app():
             os.remove(temp_path)
         if os.path.exists("heatmap.png"):
             os.remove("heatmap.png")
-        if os.path.exists("heatmap_good.png"):
-            os.remove("heatmap_good.png")
+        if os.path.exists("good_heatmap.png"):
+            os.remove("good_heatmap.png")
 
 if __name__ == "__main__":
     # A better way to check if running within Streamlit
